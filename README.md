@@ -4,9 +4,7 @@ By Yuxiang Chai
 
 For more information, please check the [NYU HPC official website](https://sites.google.com/nyu.edu/nyu-hpc) or email **hpc@nyu.edu**
 
-**Note**
-
-In this file, `<net-id>` means your net ID and you should replace it with something like `bs1234`. And `/scratch/<net-id>` should be something like `/scratch/bs1234`
+**Note:** In this file, `<net-id>` means your net ID and you should replace it with something like `bs1234`. And `/scratch/<net-id>` should be something like `/scratch/bs1234`
 
 ## Contents
 
@@ -149,6 +147,12 @@ $ source ~/.bashrc    # to reload the bash and make conda work
 (base) $ conda create -p /scratch/<net-id>/env39 python=3.9    # we can specify python version when creating the environment, you can replace the 'env39' with other names
 (base) $ conda activate /scratch/<net-id>/env39/    # activate the environment env39
 (env39) $ conda list    # this command will show the installed packages in env39
+```
+
+**Note:** If encounter `disk quota exceeded` error, run the following command.
+
+```{bash}
+$ conda clean -a
 ```
 
 ## Submit a job
