@@ -4,6 +4,26 @@ By Yuxiang Chai
 
 For more information, please check the [NYU HPC official website](https://sites.google.com/nyu.edu/nyu-hpc) or email **hpc@nyu.edu**
 
+**Note**
+
+In this file, `<net-id>` means your net ID and you should replace it with something like `bs1234`. And `/scratch/<net-id>` should be something like `/scratch/bs1234`
+
+## Contents
+
+- [Prerequisite](#prerequisite)
+- [Setup](#setup)
+    - [Use VS Code](#use-vs-code)
+    - [Use Terminal](#use-terminal)
+- [Intro to Greene](#intro-to-greene)
+    - [Storage System](#storage-system)
+    - [GPU Resources](#gpu-resources)
+- [Environment Setup](#environment-setup)
+    - [Venv](#venv)
+    - [Conda](#conda)
+- [Submit a Job](#submit-a-job)
+    - [SBATCH](#sbatch)
+    - [SRUN](#srun)
+    - [OOD](#ood)
 
 ## Prerequisite
 
@@ -20,7 +40,9 @@ For more information, please check the [NYU HPC official website](https://sites.
 - Use `remote ssh` extension to connect to `<net-id>@greene.hpc.nyu.edu`
 - Open your folder. (for most time, use `/scratch/<net-id>` instead of `/home/<net-id>`, explained later)
 
-### Use command line (need knowledge of vim and other command line tools)
+### Use Terminal 
+
+(need knowledge of vim and other command line tools)
 
 - ssh to gateway
 ```{bash}
@@ -229,8 +251,8 @@ $ srun --mem=8GB --time=2:00:00 --gres=gpu:rtx8000:1 --pty /bin/bash
 
 command line arguments are the same as SBATCH arguments listed above.
 
-### OOD (Open OnDemand)
+### OOD 
 
-OOD is the GUI tools for HPC. Log into [https://ood.hpc.nyu.edu](https://ood.hpc.nyu.edu) and select **Interactive Apps**, where you can find many tools including Jupyter Notebook. 
+OOD (Open OnDemand) is the GUI tools for HPC. Log into [https://ood.hpc.nyu.edu](https://ood.hpc.nyu.edu) and select **Interactive Apps**, where you can find many tools including Jupyter Notebook. 
 
 Also we can easily use `conda` environments and `venv` environments in OOD. All you need to do is to activate the environment and install `ipykernel` and register it. You can find tutorials online.
