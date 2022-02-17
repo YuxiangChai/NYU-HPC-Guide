@@ -4,7 +4,7 @@ By Yuxiang Chai
 
 For more information, please check the [NYU HPC official website](https://sites.google.com/nyu.edu/nyu-hpc) or email **hpc@nyu.edu**
 
-**Note:** In this file, `<net-id>` means your net ID and you should replace it with something like `bs1234`. And `/scratch/<net-id>` should be something like `/scratch/bs1234`
+**Note:** In this file, `<net-id>` means your net ID and you should replace it with something like `bs1234`. And `/scratch/<net-id>` should be something like `/scratch/bs1234`. And for debugging and testing, I suggest to use `srun` command to create an interactive job, and use `sbatch` command to train the whole job. Please check the sections below for more information.
 
 ## Contents
 
