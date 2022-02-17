@@ -247,7 +247,7 @@ $ scancel <job-id>    # to cancel the job
 
 ### SRUN
 
-`srun` is to start a interactive bash job. I usually use this to test my programs and then use `sbatch` to train the whole job.
+`srun` is to start a interactive bash job. I usually use this to debug and test my programs and then use `sbatch` to train the whole job.
 
 ```{bash}
 $ srun --mem=8GB --time=2:00:00 --gres=gpu:rtx8000:1 --pty /bin/bash
