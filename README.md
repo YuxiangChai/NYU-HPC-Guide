@@ -37,28 +37,28 @@ For more information, please check the [NYU HPC official website](https://sites.
 
 ### Use VS Code
 
-- Connect to NYU VPN
-- Open VS Code and enable `remote ssh` extension
-- Use `remote ssh` extension to connect to `<net-id>@greene.hpc.nyu.edu`
-- Open your folder. (for most time, use `/scratch/<net-id>` instead of `/home/<net-id>`, explained later)
+1. Connect to NYU VPN
+2. Open VS Code and enable `remote ssh` extension
+3. Use `remote ssh` extension to connect to `<net-id>@greene.hpc.nyu.edu`
+4. Open your folder. (for most time, use `/scratch/<net-id>` instead of `/home/<net-id>`, explained later)
 
 ### Use Terminal 
 
 (need knowledge of vim and other command line tools)
 
-- ssh to gateway
+1. ssh to gateway
 ```{bash}
 $ ssh <net-id>@gw.hpc.nyu.edu
 ```
-- from gateway, ssh to greene
+2. from gateway, ssh to greene
 ```{bash}
 $ ssh <net-id>@greene.hpc.nyu.edu
 ```
 
 **OR**
 
-- Connect to NYU VPN
-- Directly ssh to greene
+1. Connect to NYU VPN
+2. Directly ssh to greene
 ```{bash}
 $ ssh <net-id>@greene.hpc.nyu.edu
 ```
@@ -94,32 +94,34 @@ Pros:
 - No need to mess with conda environment.
 - Easy to use when submitting a job.
 - Fit for most popular packages.
+- Easy to install a ipykernel for Jupyter.
 
 Cons:
 
 - It cannot create an environment with specific Python version, and it can only create an environment with current Python version.
 - For some packages, it's hard to install with `pip` and may encounter some problems.
+- Cuda version is not changeable.
 
 To use `venv`,
 
-- First we need to load a Python module.
+1. First we need to load a Python module.
 ```{bash}
 $ module purge    # purge everything
 $ module avail python    # list all python available versions, right now only 3.8.6 is available
 $ module load python/intel/3.8.6    # load a python module
 ```
-- Then we can create our own virtual environment.
+2. Then we can create our own virtual environment.
 ```{bash}
 $ cd /scratch/<net-id>    # or cd $SCRATCH
 $ python -m venv myenv    # create a folder(environment) under the current directory. You can replace 'myenv' with other names
 $ source myenv/bin/activate    # activate the environment you created
 (myenv) $ python --version    # now we can see myenv is activated and shown at the front
 ```
-- Install packages you need.
+3. Install packages you need.
 ```{bash}
 (myenv) $ pip install numpy
 ```
-- Submit a job (in the section [Submit a job](#submit-a-job))
+4. Submit a job (in the section [Submit a job](#submit-a-job))
 
 ### Conda
 
@@ -129,12 +131,14 @@ Pros:
 
 - Packages more than Python packages
 - Specify Python version
+- Can install specific cudatoolkit version for Pytorch
 
 Cons:
 
 - sometimes will get messed up due to dependency conflicts
 - more steps to setup
 - more steps to use when submitting a job
+- more steps to install a ipykernel for Jupyter.
 
 To use `conda`:
 
