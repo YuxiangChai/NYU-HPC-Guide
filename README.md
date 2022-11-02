@@ -275,4 +275,6 @@ command line arguments are the same as SBATCH arguments listed above.
 
 OOD (Open OnDemand) is the GUI tools for HPC. Log into [https://ood.hpc.nyu.edu](https://ood.hpc.nyu.edu) and select **Interactive Apps**, where you can find many tools including Jupyter Notebook. 
 
-Also we can easily use `conda` environments and `venv` environments in OOD. All you need to do is to activate the environment and install `ipykernel` and register it. You can find tutorials online.
+Also we can easily use `venv` environments in OOD. All you need to do is to activate the environment and install `ipykernel` and register it. You can find tutorials online.
+
+For `conda` environments, it's more complex. We need to use `singularity` to build the jupyter kernel environment. Official link is [here](https://sites.google.com/nyu.edu/nyu-hpc/hpc-systems/greene/software/open-ondemand-ood-with-condasingularity?authuser=0).
